@@ -1,0 +1,270 @@
+@font-face {
+  font-family: 'CascadiaCode';
+  src: url(fonts/CascadiaCode.ttf);
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  background-attachment: fixed;
+  overflow: visible;
+  font-family: "CascadiaCode";
+  font-weight: normal;
+  overflow-x: hidden;
+}
+
+.topnav {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'CascadiaCode';
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container2 {
+  height: 1000px;
+  /* Set the height of the container to a large value to enable scrolling */
+}
+
+.content {
+  padding-top: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: roll-in 6s ease forwards;
+}
+
+@keyframes roll-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.container3 {
+  height: 400px;
+  /* Set the height of the container to a large value to enable scrolling */
+}
+
+.bounce {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.topnav.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+form {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+
+.topnav .logos img {
+  height: 20px;
+  margin-left: 2px;
+  padding-right: 40px;
+}
+
+.topnav .logo img {
+  height: 30px;
+}
+
+.topnav a {
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.topnav .links a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-left: 20px;
+  float: right;
+}
+
+.topnav a:hover {
+  color: rgb(110, 110, 110);
+}
+
+section {
+  padding-left: 91px;
+  display: grid;
+  place-items: end start;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  color: black;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #8e8e8e;
+}
+
+.imgbox {
+  float: right;
+  padding-top: 70px;
+  padding-right: 80px;
+  position: relative;
+  width: 35%;
+  height: 35%;
+}
+
+.imgbox img {
+  position: relative;
+  height: 100%;
+  padding-left: 30px;
+  width: calc(130% - 80px);
+  top: -100px;
+  right: 50px;
+  transform: rotateY(180deg);
+}
+
+.imgbox2 {
+  float: right;
+  padding-top: 110px;
+  padding-left: 200px;
+  position: relative;
+  width: 35%;
+  height: 35%;
+}
+
+.imgbox2 img {
+  position: relative;
+  padding-left: 300px;
+  height: 100%;
+  width: calc(130% - 80px);
+  top: -100px;
+  right: 50px;
+
+}
+
+.max {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 4s;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 4s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 50px;
+}
+
+p {
+  color: rgb(148, 148, 148);
+}
+
+.container4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery-item {
+  position: relative;
+  width: 30%;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.0);
+  transition: all 0.5s ease-in-out;
+}
+
+.gallery-item:not(.active) {
+  width: calc((100% - 20px) / 2);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+}
+
+.gallery-item.active .gallery-image {
+  filter: blur(0);
+}
+
+.gallery-text {
+  position: absolute;
+  top: 280px;
+  left: 15px;
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 2px 2px 2px rgb(1, 1, 1);
+  padding-left: 20px;
+}
+
+.gallery-item.active {
+  width: 40%;
+  z-index: 1;
+}
+
+.gallery-item:hover {
+  width: 40%;
+  z-index: 1;
+}
+
+.gallery-item:not(.active):hover {
+  width: calc((100% - 20px) / 2);
+}
